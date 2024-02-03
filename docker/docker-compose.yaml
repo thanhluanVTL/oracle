@@ -1,0 +1,13 @@
+version: '3'
+services:
+  oracle-db:
+      container_name: oracle-db
+      image: oracleinanutshell/oracle-xe-11g:latest
+      ports:
+        - 1521:1521
+        - 5500:5500
+      # volumes:
+      #   - ${PROJECT_PATH}/ora-target-init:/docker-entrypoint-initdb.d
+      environment:
+      - ORACLE_ALLOW_REMOTE=YES
+      - ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
